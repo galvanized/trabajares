@@ -1,3 +1,4 @@
+#pragma config(Motor,  port1,           mW,            tmotorNone, openLoop)
 #pragma config(Motor,  port2,           mRF,           tmotorVex393_MC29, openLoop, reversed)
 #pragma config(Motor,  port3,           mLF,           tmotorVex393_MC29, openLoop, encoderPort, None)
 #pragma config(Motor,  port4,           mLB,           tmotorVex393_MC29, openLoop, encoderPort, None)
@@ -30,6 +31,8 @@ byte armNeutralPow = 0;
 byte clawOpenPow = 127;
 byte clawClosePow = -127;
 byte clawNeutralPow = 0;
+
+byte winchPow = 127;
 
 byte axisScale(byte in){ // provides deadzone functionality
 		byte threshold = 10; // deadzone
@@ -75,7 +78,19 @@ void setArm(byte power){
 	motor[mARB] = power;
 }
 
+void rcWinch(){
+	/*
+	8U & 8D
+	Retract & Reverse
+	(reverse only with ratchet up!)
+	*/
+	if(vexRT[Btn8U]) motor[mW] = winchPow;
+	else{
+		if(vexRT[Btn8D]) motor[mW] = -winchPow;
+		else motor[mW] = 0;
+	}
 
+}
 
 void rcArm(){
 	/* allow human control of the arm and pinchers
@@ -103,5 +118,6 @@ task main(){
 		delay(10);
 		omniDrive(vexRT[Ch3], vexRT[Ch4], vexRT[Ch1]);
 		rcArm();
+		rcWinch();
 	}
 }
