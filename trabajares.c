@@ -78,27 +78,22 @@ void setArm(byte power){
 	motor[mARB] = power;
 }
 
-void rcWinch(){
-	/*
-	8U & 8D
-	Retract & Reverse
-	(reverse only with ratchet up!)
-	*/
-	if(vexRT[Btn8U]) motor[mW] = winchPow;
-	else{
-		if(vexRT[Btn8D]) motor[mW] = -winchPow;
-		else motor[mW] = 0;
-	}
 
-}
-
-void rcArm(){
+void rcControl(){
 	/* allow human control of the arm and pinchers
 									Control Setup
+
 				left											right
 				5U - Claw Open 						6U - Arm Up
 				5D - Claw Close						6D - Arm Down
+
+				8U & 8D
+				Winch Retract & Reverse
+				(reverse only with ratchet up!)
+
 	*/
+	omniDrive(vexRT[Ch3], vexRT[Ch4], vexRT[Ch1]);
+
 	if(vexRT[Btn6U]) setArm(armUpPow);
 	else{
 		if(vexRT[Btn6D]) setArm(armDownPow);
@@ -111,13 +106,17 @@ void rcArm(){
 		else motor[mC] = clawNeutralPow;
 	}
 
+	if(vexRT[Btn8U]) motor[mW] = winchPow;
+	else{
+		if(vexRT[Btn8D]) motor[mW] = -winchPow;
+		else motor[mW] = 0;
+	}
+
 }
 
 task main(){
 	while(true){
 		delay(10);
-		omniDrive(vexRT[Ch3], vexRT[Ch4], vexRT[Ch1]);
-		rcArm();
-		rcWinch();
+		rcControl();
 	}
 }
