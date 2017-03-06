@@ -97,7 +97,7 @@ void rcControl(){
 				(reverse only with ratchet up!)
 
 	*/
-	omniDrive(vexRT[Ch3], vexRT[Ch4], vexRT[Ch1]);
+	omniDrive(axisScale(vexRT[Ch3]), axisScale(vexRT[Ch4]), axisScale(vexRT[Ch1]));
 
 	if(vexRT[Btn6U]) setArm(armUpPow);
 	else{
