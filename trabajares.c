@@ -26,7 +26,8 @@
 	Natural Language PLTW
 
 
-Shane Galvin 2017 CC Attribution 4.0 International
+Shane Galvin 2017
+MIT License
 */
 
 byte armUpPow = 127;
