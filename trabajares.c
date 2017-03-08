@@ -29,6 +29,13 @@
 Shane Galvin 2017
 MIT License
 */
+#pragma platform(VEX)
+#pragma competitionControl(Competition) 
+// competitionControl may be set to OFF or Competition
+#pragma autonomousDuration(20)
+#pragma userControlDuration(120)
+
+#include "Vex_Competition_Includes.c"
 
 byte armUpPow = 127;
 byte armDownPow = -128;
@@ -120,9 +127,24 @@ void rcControl(){
 
 }
 
-task main(){
-    while(true){
-        delay(10);
-        rcControl();
-    }
+
+
+
+task pre_autonomous()
+{
+	// prep the 'bot
+}
+
+task autonomous()
+{
+	AutonomousCOdePlaceholderForTesting();
+}
+
+task usercontrol()
+{
+	while(true)
+	{
+		delay(10);
+		rcControl();
+	}
 }
