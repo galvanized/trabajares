@@ -55,14 +55,6 @@ byte axisScale(byte in){ // provides deadzone functionality
         }
         else{
         	return in;
-        	/*
-            //return in;
-            byte inSign = sgn(in)*2+1; // gives sign multiplier (-1,1)
-            short inSht = abs(in - threshold) * 128; // hold input value in short for better scaling
-            // scale such that at threshold, output = 0, and at maximum, output equals maximum
-            // slope equals maximum (128) divided by maximum minus threshold
-            inSht*=(32767/(32767-threshold*128)); // approximates (128/(128-threshold))
-            return (byte)(inSht/128*inSign);*/
         }
 }
 
