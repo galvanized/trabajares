@@ -15,5 +15,7 @@ Currently supports only driver control.
 - [ ] Test that the claw works properly
 - [ ] Test that the winch works properly
 - [ ] Write code to allow change in power settings for arm
-- [ ] Create button to correct claw offset
-- [ ] Autonomous: Arm up, claw open, drive forward
+
+- Autonomous:
+- [ ] Arm Up (+ arm open and testing)
+- [ ] Drive Forward (and test)
