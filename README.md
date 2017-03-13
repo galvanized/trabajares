@@ -8,3 +8,14 @@ The robot is also equipped with a winch for climbing.
 Motors: 4 drive motors, 4 arm lift motors, 2 claw motors (wired as one)
 
 Currently supports only driver control.
+
+### TODO
+- [x] Test that the robot drives correctly
+- [x] Test that the arm works properly
+- [ ] Test that the claw works properly
+- [ ] Test that the winch works properly
+- [ ] Write code to allow change in power settings for arm
+
+- Autonomous:
+- [ ] Arm Up (+ arm open and testing)
+- [ ] Drive Forward (and test)
