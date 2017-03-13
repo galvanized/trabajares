@@ -86,7 +86,6 @@ void setArm(byte power){
     motor[mARB] = power;
 }
 
-
 void rcControl(){
     /* allow human control of the arm and pinchers
                             Control Setup
@@ -120,6 +119,36 @@ void rcControl(){
         else motor[mW] = 0;
     }
 
+}
+
+void armUp(){
+	motor[mC] = 80;
+	delay(1000);
+	motor[mC] = 0;
+	setArm(127);
+	delay(1000);
+	setArm(0);
+}
+
+void autonomousWIP(){
+	armUp();
+	omniDrive(127,0,0);
+	delay(1000);
+	omniDrive(0,0,0);
+	delay(2000);
+	for(int i; i<4; i++){
+			omniDrive(-127,0,0);
+			delay(500);
+			omniDrive(0,0,0);
+			delay(100);
+			omniDrive(127,0,0);
+			delay(600);
+			omniDrive(0,0,0);
+			delay(100);
+	}
+	omniDrive(-50,0,0);
+	delay(1000);
+	omniDrive(0,0,0);
 }
 
 /*---------------------------------------------------------------------------*/
