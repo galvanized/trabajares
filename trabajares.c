@@ -187,33 +187,16 @@ void pre_auton()
   // running between Autonomous and Driver controlled modes. You will need to
   // manage all user created tasks if set to false.
   bStopTasksBetweenModes = true;
-
-	// Set bDisplayCompetitionStatusOnLcd to false if you don't want the LCD
-	// used by the competition include file, for example, you might want
-	// to display your team name on the LCD in this function.
-	// bDisplayCompetitionStatusOnLcd = false;
-
-  // All activities that occur before the competition starts
-  // Example: clearing encoders, setting servo positions, ...
 }
 
 /*---------------------------------------------------------------------------*/
 /*                                                                           */
 /*                              Autonomous Task                              */
 /*                                                                           */
-/*  This task is used to control your robot during the autonomous phase of   */
-/*  a VEX Competition.                                                       */
-/*                                                                           */
-/*  You must modify the code to add your own robot specific commands here.   */
 /*---------------------------------------------------------------------------*/
 
 task autonomous()
 {
-  // ..........................................................................
-  // Insert user code here.
-  // ..........................................................................
-
-  // Remove this function call once you have "real" code.
   autonomousUser();
 }
 
@@ -221,16 +204,10 @@ task autonomous()
 /*                                                                           */
 /*                              User Control Task                            */
 /*                                                                           */
-/*  This task is used to control your robot during the user control phase of */
-/*  a VEX Competition.                                                       */
-/*                                                                           */
-/*  You must modify the code to add your own robot specific commands here.   */
 /*---------------------------------------------------------------------------*/
 
 task usercontrol()
 {
-  // User control code here, inside the loop
-
   while(true)
 	{
 		delay(10);
