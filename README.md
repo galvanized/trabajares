@@ -12,10 +12,9 @@ Currently supports only driver control.
 ### TODO
 - [x] Test that the robot drives correctly
 - [x] Test that the arm works properly
-- [ ] Test that the claw works properly
-- [ ] Test that the winch works properly
-- [ ] Write code to allow change in power settings for arm
+- [x] Test that the claw works properly
+- [x] Test that the winch works properly
 
 - Autonomous:
-- [ ] Arm Up (+ arm open and testing)
-- [ ] Drive Forward (and test)
+- [x] Arm Up (+ arm open and testing)
+- [x] Drive Forward (and test)
