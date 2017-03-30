@@ -5,9 +5,8 @@ Trabajares is a 4-wheeled mechanum robot with a U-shaped frame.
 It supports a central, one-degree-of-freedom arm with a claw on the end.
 The robot is also equipped with a winch for climbing.
 
-Motors: 4 drive motors, 4 arm lift motors, 2 claw motors (wired as one)
+Motors: 4 drive motors, 4 arm lift motors, 2 claw motors (wired and geared as one), 1 winch motor
 
-Currently supports only driver control.
 
 ### TODO
 - [x] Test that the robot drives correctly
